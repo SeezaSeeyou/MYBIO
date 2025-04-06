@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>หน้าติดต่อ</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            background-color: #3B1E54;
+            font-family: 'Kanit', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #3B1E54;
+        }
+
+        h1, h2 {
+            color: #3B1E54;
+        }
+
+        p {
+            color: #3B1E54;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #EEEEEE;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio {
+            background-color: #D4BEE4;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 5px solid #EEEEEE;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .section-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .section {
+            flex: 1;
+            min-width: 200px;
+            background-color: #D4BEE4;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section:hover {
+            flex: 2;
+            background-color: #9B7EBD;
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3B1E54;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #3B1E54, #9B7EBD);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            filter: brightness(0) invert(1);
+            z-index: 2;
+        }
+
+        .icon-container {
+    position: relative;
+    width: 64px; /* หรือขนาดที่ใช้จริง */
+    height: 64px;
+    overflow: hidden;
+}
+
+.icon-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+}
+
+.icon-container::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 40%;  /* ทำให้เป็นเส้นบางๆ */
+    height: 500%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: rotate(45deg);  /* เอียง 45 องศา */
+    animation: iconShineStripe 5s infinite;
+}
+
+@keyframes iconShineStripe {
+    0% {
+        left: -150%;
+        top: -150%;  /* เริ่มจากมุมบนซ้าย */
+        opacity: 0;
+    }
+    50% {
+        left: 150%;
+        top: 150%;  /* ไปมุมขวาล่าง */
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        top: 150%;  /* ไปมุมขวาล่าง */
+        opacity: 0;
+    }
+}
+
+
+
+        .label {
+            font-weight: bold;
+            color: #3B1E54;
+            font-size: 1.05rem;
+        }
+
+        .heading-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #3B1E54;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-container {
+                flex-direction: column;
+            }
+            
+            .section:hover {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading-title">โปรไฟล์ของฉัน</h1>
+        
+        <div class="bio">
+            <img src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/afdc823035e9869b80e962addbcc306b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=7dfad484&x-expires=1744095600&x-signature=mLZJ9hE3GdXPoolTKcm8%2Fa7xCBA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" 
+            alt="@xesan_1" class="profile-pic">
+            <h1>@xesan_1</h1>
+        </div>
+        
+        <div class="section-container">
+            <div class="section" id="contactSection">
+                <h2>ติดต่อ</h2>
+                <div id="contactItems"></div>
+            </div>
+            
+            <div class="section" id="donateSection">
+                <h2>โดเนท</h2>
+                <div id="donateItems"></div>
+            </div>
+            
+            <div class="section" id="gamesSection">
+                <h2>เกมอื่นๆ</h2>
+                <div id="gameItems"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ข้อมูลการติดต่อ
+        const Contact = {
+            Discord: "https://discord.gg/sasGUJw6pA",
+            Gmail: "seezajojo01@gmail.com",
+        };
+        
+        const ContactImg = {
+            Discord: "img/Arturo-Wibawa-Akar-Discord.512.png",
+            Gmail: "img/Simpleicons-Team-Simple-Gmail.512.png",
+        };
+
+        // ข้อมูลการโดเนท
+        const Donate = {
+            "โดเนทขึ้นจอ": "https://tipme.in.th/797beea23712c13713c69b90"
+        };
+        
+        const DonateImg = {
+            "โดเนทขึ้นจอ": "img/f36c3097.svg",
+        };
+
+        // ข้อมูลเกม
+        const Games = {
+            "RobloxProfile": "https://www.roblox.com/users/3515140226/profile",
+        };
+        
+        const GamesImg = {
+            "RobloxProfile": "img/Simpleicons-Team-Simple-Roblox.512.png",
+        };
+
+        // สร้างรายการจากข้อมูล
+        function createItems(data, imgData, containerId) {
+            const container = document.getElementById(containerId);
+            
+            for (const [key, value] of Object.entries(data)) {
+                const item = document.createElement('div');
+                item.className = 'item';
+                
+                const iconContainer = document.createElement('div');
+                iconContainer.className = 'icon-container';
+                
+                const icon = document.createElement('img');
+                icon.src = imgData[key];
+                icon.className = 'icon';
+                icon.alt = key + ' icon';
+                
+                iconContainer.appendChild(icon);
+                
+                const label = document.createElement('span');
+                label.className = 'label';
+                label.textContent = key;
+                
+                item.appendChild(iconContainer);
+                item.appendChild(label);
+                
+                // เพิ่มการจัดการคลิก
+                item.addEventListener('click', function() {
+                    if (value.startsWith('http')) {
+                        window.open(value, '_blank');
+                    } else {
+                        // ถ้าไม่ใช่ URL ให้คัดลอกข้อความ
+                        navigator.clipboard.writeText(value).then(() => {
+                            alert(key + ' คัดลอกไปยังคลิปบอร์ดแล้ว!');
+                        });
+                    }
+                });
+                
+                container.appendChild(item);
+            }
+        }
+
+        // เรียกใช้ฟังก์ชันเมื่อหน้าเว็บโหลดเสร็จ
+        window.onload = function() {
+            createItems(Contact, ContactImg, 'contactItems');
+            createItems(Donate, DonateImg, 'donateItems');
+            createItems(Games, GamesImg, 'gameItems');
+            
+            // ทำให้แอนิเมชันแสงวิ่งมีช่วงเวลาที่แตกต่างกัน
+            const iconContainers = document.querySelectorAll('.icon-container');
+            iconContainers.forEach((container, index) => {
+                const delay = (index * 0.5) % 2;
+                container.style.animationDelay = delay + 's';
+            });
+        };
+    </script>
+</body>
+</html>
